@@ -1,8 +1,5 @@
 # TS-Module2
-
-/_ ========================= 2.1 Primitive types in typescript ========================= _/
-
-/_ ========================= 2.2 Primitive types in typescript ========================= _/
+## 2.2 Primitive types in typescript 
 /_ Primitive Data Types: - undefined - null - boolean - number - string - symbol
 _/
 
@@ -12,16 +9,18 @@ _/
 ```
 
 /_ Implicit Type Define _/
-```let person1 = "Rakib"; // string```
+```bash
+let person1 = "Rakib"; // string
+// person = 01 Type 'number' is not assignable to type 'string'
 
-```// person = 01 Type 'number' is not assignable to type 'string'```
+let person3: boolean; // can be reassinged later
+person3 = true; // Can't assign any ohter data type than 'boolean'
+```
 
-```let person3: boolean; // can be reassinged later```
-```person3 = true; // Can't assign any ohter data type than 'boolean'```
-
-/_ ========================= 2.3 Array and Tuples in typescript ========================= _/
-```const players = ["sakib", true, "Mushfiq"]; // Implicitly defined```
-const players2: string[] = ["sakib", "mash", "Mushfiq"]; // Explicitly defined```
+## 2.3 Array and Tuples in typescript 
+```bash
+const players = ["sakib", true, "Mushfiq"]; // Implicitly defined
+const players2: string[] = ["sakib", "mash", "Mushfiq"]; // Explicitly defined
 
 players2[2] = "Riyad";
 // players2[2] = 100 'number' can't assign to type 'string'
@@ -30,8 +29,10 @@ players2[2] = "Riyad";
 const players3: [string, number] = ["Sakib", 99];
 // players3[1] = 'hello' Type '"hello"' is not assignable to type 'number'
 // players3[2] = 'hello' Type '"hello"' is not assignable to type 'undefined'
+```
 
-/_ ========================= 2.4 Object, Literal Types and Optional types ========================= _/
+## 2.4 Object, Literal Types and Optional types 
+```bash
 const riyadUser: {
 name: "Riyad"; // Literal type
 age: number;
@@ -42,8 +43,10 @@ name: "Riyad",
 age: 22,
 isPremium: true,
 };
+```
 
-/_ ========================= 2.5 Functions in Typescript ========================= _/
+## 2.5 Functions in Typescript 
+```bash
 const addNumber = (num1: number, num2: number): number => {
 return num1 + num2;
 };
@@ -61,8 +64,10 @@ addBal: function (money: number) {
 this.balance = this.balance + money;
 },
 };
+```
 
-/_ ========================= 2.6 Spread, Rest, Default Parameters and Destructuring ========================= _/
+## 2.6 Spread, Rest, Default Parameters and Destructuring 
+```bash
 // Default Parameter
 const multiplyNum = (num1: number, num2: number = 1): number => {
 return num1 / num2;
@@ -79,8 +84,10 @@ friends.forEach((friend) => console.log(`Hi ${friend}`));
 };
 
 const { fullName } = user; // Destructuring
+```
 
-/_ ========================= 2.7 Type alias and optional types ========================= _/
+## 2.7 Type alias and optional types 
+```bash
 type myString = string;
 const firtName: myString = "Riyad";
 
@@ -99,8 +106,10 @@ type CalculateFunc = (a: number, b: number) => number;
 const divide: CalculateFunc = (num1, num2) => {
 return num1 / num2;
 };
+```
 
-/_ ========================= 2.8 Union, Intersection and Enum Types ========================= _/
+## 2.8 Union, Intersection and Enum Types 
+```bash
 let dynamicVar: string | number | boolean = "hello"; // Union
 dynamicVar = 25;
 
@@ -126,8 +135,10 @@ name: "Rooky",
 expertise: ["HTML"],
 level: Level.junior,
 };
+```
 
-/_ ========================= 2.9 Null, Unknown and Never Types ========================= _/
+## 2.9 Null, Unknown and Never Types 
+```bash
 // Null
 const getFullName = (firstName: string, lastName: string | null): string => {
 return firstName + lastName;
@@ -157,10 +168,13 @@ throw new Error(message);
 };
 
 throwError("Nooooo, another error");
+```
 
-/_ ========================= 2.10 Ternary Operator , Nullish Coeslancing Operator ========================= _/
+## 2.10 Ternary Operator , Nullish Coeslancing Operator 
+```bash
 let age: number | null = 19;
 const isAdult = age >= 18 ? "Yes" : "no"; // Ternary Operator
 
 age = null;
 const currAge = age ?? 0; // Nullish Coeslancing Operator
+```
