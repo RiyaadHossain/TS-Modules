@@ -102,7 +102,32 @@ const divide: CalculateFunc = (num1, num2) => {
   return num1 / num2;
 };
 
-/* ========================= 2.8 Primitive types in typescript =========================  */
+/* ========================= 2.8 Union, Intersection and Enum Types =========================  */
+let dynamicVar: string | number | boolean = "hello"; // Union
+dynamicVar = 25;
+
+type Noob = {
+  name: string;
+};
+
+// Enum
+enum Level {
+  junior = "junior",
+  mid = "mid",
+  senior = "junior",
+}
+
+// Intersection
+type JuniorDev = Noob & {
+  expertise: string[];
+  level: Level;
+};
+
+const rookieDev: JuniorDev = {
+  name: "Rooky",
+  expertise: ["HTML"],
+  level: Level.junior,
+};
 
 /* ========================= 2.9 Primitive types in typescript =========================  */
 
