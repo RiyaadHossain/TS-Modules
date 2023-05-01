@@ -7,7 +7,9 @@
 _/
 
 /_ Explicit Type Define _/
-```let person: string = "Riyad";```
+```bash 
+    let person: string = "Riyad";
+```
 
 /_ Implicit Type Define _/
 ```let person1 = "Rakib"; // string```
