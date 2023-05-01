@@ -186,3 +186,8 @@ const isAdult = age >= 18 ? "Yes" : "no"; // Ternary Operator
 age = null;
 const currAge = age ?? 0; // Nullish Coeslancing Operator
 ```
+
+## 🔗 Let's connect
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://riyad-hossain.vercel.app/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/riyaad-hossain/)
