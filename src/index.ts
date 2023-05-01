@@ -129,6 +129,40 @@ const rookieDev: JuniorDev = {
   level: Level.junior,
 };
 
-/* ========================= 2.9 Primitive types in typescript =========================  */
+/* ========================= 2.9 Null, Unknown and Never Types =========================  */
+// Null
+const getFullName = (firstName: string, lastName: string | null): string => {
+  return firstName + lastName;
+};
 
-/* ========================= 2.10 Primitive types in typescript =========================  */
+// Unknown [if we don't know what'll be the value is]
+const convertSpeed = (value: unknown) => {
+  if (typeof value === "number") {
+    const convertedSpeed = value * 1000;
+    return `The spped is ${convertedSpeed}`;
+  } else if (typeof value === "string") {
+    const [digit, unit] = value.split(" ");
+    const convertedSpeed = parseInt(digit) * 1000;
+    return `The spped is ${convertedSpeed}`;
+  } else {
+    ("Unvalid Input");
+  }
+};
+
+convertSpeed(10);
+convertSpeed("10 Kmh");
+convertSpeed(true);
+
+// Never
+const throwError = (message: string): never => {
+  throw new Error(message);
+};
+
+throwError("Nooooo, another error");
+
+/* ========================= 2.10 Ternary Operator , Nullish Coeslancing Operator =========================  */
+let age: number | null = 19;
+const isAdult = age >= 18 ? "Yes" : "no"; // Ternary Operator
+
+age = null;
+const currAge = age ?? 0; // Nullish Coeslancing Operator
