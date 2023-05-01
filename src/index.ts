@@ -65,8 +65,8 @@ const user: {
 };
 
 /* ========================= 2.6 Spread, Rest, Default Parameters and Destructuring =========================  */
+// Default Parameter
 const multiplyNum = (num1: number, num2: number = 1): number => {
-  // Default Parameter
   return num1 / num2;
 };
 multiplyNum(10);
@@ -75,14 +75,32 @@ const fruits1 = ["Mango", "Banana", "Apple"];
 const fruits2 = ["Pineapple", "Watermelon"];
 fruits1.push(...fruits2); // Spread
 
+// Rest
 const greetings = (...friends: string[]): void => {
-  // Rest
   friends.forEach((friend) => console.log(`Hi ${friend}`));
 };
 
 const { fullName } = user; // Destructuring
 
-/* ========================= 2.7 Primitive types in typescript =========================  */
+/* ========================= 2.7 Type alias and optional types =========================  */
+type myString = string;
+const firtName: myString = "Riyad";
+
+type UserType = {
+  name: string;
+  age: number;
+};
+
+const rayan: UserType = {
+  name: "Rayan",
+  age: 21,
+};
+
+type CalculateFunc = (a: number, b: number) => number;
+
+const divide: CalculateFunc = (num1, num2) => {
+  return num1 / num2;
+};
 
 /* ========================= 2.8 Primitive types in typescript =========================  */
 
