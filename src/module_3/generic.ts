@@ -86,7 +86,7 @@ const getProperty = <T, K extends keyof T>(obj: T, key: K) => {
     return obj[key];
 }
 
-const computer = {ram: "15GB", ssd: "500GB", color: "White"}
 // the 'K' will be an union type 
 // K = "ram" | "ssd" | "color"
+const computer = {ram: "15GB", ssd: "500GB", color: "White"}
 const comRam = getProperty(computer, "ram")
