@@ -79,14 +79,20 @@ const addInfo2 = <T extends IUser>(info: T) => {
   return result;
 };
 
-const myInfoG2 = addInfo2({ name: "Riyad", age: 22, profession: "Web Dev" }); // We can add other properties, but at least we have to pass the constraints properties
+// We can add other properties, but at least we have to pass the constraints properties { name: string, age: number }
+const myInfoG2 = addInfo2({ name: "Riyad", age: 22, profession: "Web Dev" });
 
 // Generic Constraints Using Keyof
+type UserTypes = {
+  name: string;
+  age: number;
+};
+type UserKeyTypes = keyof UserTypes; // "name" | "age"
 const getProperty = <T, K extends keyof T>(obj: T, key: K) => {
-    return obj[key];
-}
+  return obj[key];
+};
 
-// the 'K' will be an union type 
+// the 'K' will be an union type
 // K = "ram" | "ssd" | "color"
-const computer = {ram: "15GB", ssd: "500GB", color: "White"}
-const comRam = getProperty(computer, "ram")
+const computer = { ram: "15GB", ssd: "500GB", color: "White" };
+const comRam = getProperty(computer, "ram"); // Autometically suggest the property of computer

@@ -44,7 +44,7 @@ const oneNtwo: addFunc = (num1, num2) => num1 + num2; // Preferable to use type 
 
 // Interface in Array___________________
 interface INumberArray {
-  [index: number]: number;
+  [index: number]: number; // Index signature
 }
 
 const array1: INumberArray = [1, 2, 3];

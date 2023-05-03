@@ -30,7 +30,6 @@ const convertedValue = <string>gramToBeString
 
 
 // In Object___________________
-
 type ErrorType = {
     message: string
 }

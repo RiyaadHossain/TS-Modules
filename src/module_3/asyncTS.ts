@@ -13,6 +13,7 @@ const getPromise = (): Promise<IData> => {
 
 const promiseResult = getPromise();
 
+// Practical use case___________
 interface IToDo {
   userId: number;
   id: number;
