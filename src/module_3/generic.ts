@@ -46,3 +46,23 @@ const someOneIG2: Person3<HouseInterface, boolean> = {
   name: "someOneIG",
   house: { components: "Bricks", totalRooms: 5 },
 };
+
+
+// Generics in function_____________________
+const dummyFunc = <T, U>(param1: T, param2: U): [T, U] => {
+    return [param1, param2];
+}
+
+const dummyResult = dummyFunc<string, number>("hi", 0)
+
+// Inferr properties using Generics
+
+const addInfo = <T>(info: T) => {
+    const result = { ...info, hero: true }
+    return result
+}
+
+const meG = {name: "Riyad", age: 22}
+const myInfoG = addInfo(meG);
+
+const myNameG = myInfoG.name // Autometically infer the given values

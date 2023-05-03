@@ -1,4 +1,4 @@
-/* ========================= 2.1 Primitive types in typescript =========================  */
+/* ========================= 2.1 Installation & Configuration =========================  */
 
 /* ========================= 2.2 Primitive types in typescript =========================  */
 /* Primitive Data Types:
