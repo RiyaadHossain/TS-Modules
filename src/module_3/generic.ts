@@ -47,22 +47,36 @@ const someOneIG2: Person3<HouseInterface, boolean> = {
   house: { components: "Bricks", totalRooms: 5 },
 };
 
-
 // Generics in function_____________________
 const dummyFunc = <T, U>(param1: T, param2: U): [T, U] => {
-    return [param1, param2];
-}
+  return [param1, param2];
+};
 
-const dummyResult = dummyFunc<string, number>("hi", 0)
+const dummyResult = dummyFunc<string, number>("hi", 0);
 
 // Inferr properties using Generics
-
 const addInfo = <T>(info: T) => {
-    const result = { ...info, hero: true }
-    return result
-}
+  const result = { ...info, hero: true };
+  return result;
+};
 
-const meG = {name: "Riyad", age: 22}
+const meG = { name: "Riyad", age: 22 };
 const myInfoG = addInfo(meG);
 
-const myNameG = myInfoG.name // Autometically infer the given values
+const myNameG = myInfoG.name; // Autometically infer the given object properties
+
+// Constraints in Generics_____________________
+// There is a proble in the above code. We can add object with any properties which may make some problem in future.
+// To solve this we need to use constraints
+
+interface IUser {
+  name: string;
+  age: number;
+}
+
+const addInfo2 = <T extends IUser>(info: T) => {
+  const result = { ...info, hero: true };
+  return result;
+};
+
+const myInfoG2 = addInfo2({ name: "Riyad", age: 22, profession: "Web Dev" }); // We can add other properties, but at least we have to pass the constraints properties
