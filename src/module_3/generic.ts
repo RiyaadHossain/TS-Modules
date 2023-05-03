@@ -1,4 +1,21 @@
 
+/* ========================= 3.3 Generics =========================  */
+
+// Basic Generic
+type GenericArray<T> = Array<T>
+
+const rollNumbers: GenericArray<number> = [1, 2, 3, 4, 5]
+const citizens: GenericArray<string> = ['riyad', 'rakib', 'ramim']
+
+// Generic in Tuple
+type GenericTuple<F,S> = [F,S]
+
+const someoneG: GenericTuple<string, boolean> = ['Hello', true] 
+
+type UserG = {
+    name: string, age: number
+}
+const usersG: GenericTuple<UserG, number> = [{name: 'riyad', age: 23}, 10000] 
 
 
 
@@ -8,7 +25,10 @@
 
 
 
-/* ========================= 3.3 Type Assertion =========================  */
+
+
+
+
 
 /* ========================= 3.4 Type Assertion =========================  */
 
