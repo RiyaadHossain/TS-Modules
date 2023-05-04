@@ -17,6 +17,8 @@ type AreaNumber = {
   width: number;
 };
 
+type HeightType = AreaNumber["height"]; // book up type
+
 // modifed the type of 'AreaNumber' in single line
 type AreaString = {
   readonly [key in keyof AreaNumber]: string;
@@ -27,4 +29,4 @@ type DynamicType<T> = {
   [key in keyof T]: T[key];
 };
 
-type DynamicPerson = DynamicType<{ name: string }>;
+type DynamicPerson = DynamicType<{ name: string; age: number }>;
