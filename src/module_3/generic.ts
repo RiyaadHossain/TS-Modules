@@ -42,6 +42,7 @@ interface HouseInterface {
   totalRooms: number;
 }
 
+// car is optional
 const someOneIG2: Person3<HouseInterface, boolean> = {
   name: "someOneIG",
   house: { components: "Bricks", totalRooms: 5 },
@@ -87,7 +88,9 @@ type UserTypes = {
   name: string;
   age: number;
 };
+// usage of 'keyof'
 type UserKeyTypes = keyof UserTypes; // "name" | "age"
+
 const getProperty = <T, K extends keyof T>(obj: T, key: K) => {
   return obj[key];
 };

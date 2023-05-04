@@ -23,13 +23,13 @@ interface IToDo {
 
 const getToDo = async (): Promise<IToDo> => {
   const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
-  const data = await res.json();
+  const data: IToDo = await res.json();
   return data;
 };
 
 const callTheFunc = async () => {
   const toDoResult = await getToDo();
-  console.log(toDoResult);
+  return toDoResult
 };
 
-callTheFunc();
+// callTheFunc();
