@@ -11,5 +11,20 @@ type ProgrammingLan = "JavaScript" | "Python" | "C++" | "Java";
 type removePL<T, K> = T extends K ? never : T;
 type removeJava = removePL<ProgrammingLan, "Java">;
 
-
 /* ========================= 3.10 Mapped Type =========================  */
+type AreaNumber = {
+  height: number;
+  width: number;
+};
+
+// modifed the type of 'AreaNumber' in single line
+type AreaString = {
+  readonly [key in keyof AreaNumber]: string;
+};
+
+// Dynamic type
+type DynamicType<T> = {
+  [key in keyof T]: T[key];
+};
+
+type DynamicPerson = DynamicType<{ name: string }>;
