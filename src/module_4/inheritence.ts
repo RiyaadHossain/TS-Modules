@@ -18,9 +18,13 @@ class Person {
 // Child class
 class Student extends Person {
   grade: string;
-  constructor(grade: string, name: string, age: number, profession: string) {
+  constructor(name: string, age: number, profession: string, grade: string) {
     super(name, age, profession); // Common properties
     this.grade = grade;
+  }
+
+  studyNow(): string {
+    return `${this.name}! Study now`;
   }
 }
 
