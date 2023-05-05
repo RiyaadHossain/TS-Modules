@@ -15,7 +15,7 @@ const addNumber1 = (
     return param1 + param2;
   }
 
-  return "Both parameters must be same data Type";
+  return "Invalid input";
 };
 
 // 'in' --> object

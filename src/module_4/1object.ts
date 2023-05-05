@@ -16,7 +16,7 @@ class Animal {
 }
 
 const cat = new Animal("Persian", "cat", "mew mew"); // Creating Instance
-console.log(cat.makeSound);
+console.log(cat.makeSound());
 
 // To reduce repeatative task use parameter properties
 class Animal2 {
