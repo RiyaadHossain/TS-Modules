@@ -5,13 +5,11 @@ const userInfo: UserInfoTuple = [101, "Ema", "John", true, "2023"];
 // 2. Write a TypeScript function that takes in two arrays of numbers as parameters. The function should compare the elements in both arrays and return a new array that contains only the elements that are present in both arrays.
 type ArrOfNum = number[];
 const compareMatchElem = (array1: ArrOfNum, array2: ArrOfNum): ArrOfNum => {
-  const result: ArrOfNum = array1.filter((num) => {
-    if (array2.includes(num)) return num;
-  });
+  const result: ArrOfNum = array1.filter((num) => array2.includes(num));
   return result;
 };
 
-// 3. You have an interface for Product, containing the product's id, name, price, and category. You want to filter an array of Products based on a specific criterion and value. Write a TypeScript generic function that takes this array, a criterion , and returns a new array containing only the products that match the given criterion and value. Use a generic type parameter in the function signature to ensure type safety. (*)
+// 3. You have an interface for Product, containing the product's id, name, price, and category. You want to filter an array of Products based on a specific property and value. Write a TypeScript generic function that takes this array, a property, a value and returns a new array containing only the products that match the given property and value. Use a generic type parameter in the function signature to ensure type safety. (*)
 interface IProduct {
   id: number;
   name: string;
@@ -25,7 +23,10 @@ type filterProductFunc = (
   value: IProduct[keyof IProduct]
 ) => IProduct[];
 
-const filteredProduct: filterProductFunc = < T extends IProduct, K extends keyof T >(
+const filteredProduct: filterProductFunc = <
+  T extends IProduct,
+  K extends keyof T
+>(
   products: T[],
   key: K,
   value: T[K]
@@ -41,9 +42,9 @@ const productsArray: IProduct[] = [
 filteredProduct(productsArray, "category", "electronics");
 
 // 4. Suppose you have an array of tuples, where each tuple represents a product and contains the product name, price, and quantity. Write a TypeScript function that calculates the total cost of all the products in the array, using a generic type for the tuple and a type alias for the array. (*)
-type Product = [string, number, number];
-type ProductArray = Product[];
-const calculateCost = (products: ProductArray): number => {
+type Product<T> = [T, number, number];
+type ProductArray<T> = Product<T>[];
+const calculateCost = <T>(products: ProductArray<T>): number => {
   let totalCost: number = 0;
   totalCost = products.reduce((prev, curr) => prev + curr[1] * curr[2], 0);
   return totalCost;
