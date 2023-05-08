@@ -2,7 +2,7 @@
 
 ## 2.2 Primitive types in typescript
 
-```bash
+```tsx
  Primitive Data Types: - undefined - null - boolean - number - string - symbol
 
 
@@ -19,7 +19,7 @@ person3 = true; // Can't assign any ohter data type than 'boolean'
 
 ## 2.3 Array and Tuples in typescript
 
-```bash
+```tsx
 const players = ["sakib", true, "Mushfiq"]; // Implicitly defined
 const players2: string[] = ["sakib", "mash", "Mushfiq"]; // Explicitly defined
 
@@ -34,7 +34,7 @@ const players3: [string, number] = ["Sakib", 99];
 
 ## 2.4 Object, Literal Types and Optional types
 
-```bash
+```tsx
 const riyadUser: {
 name: "Riyad"; // Literal type
 age: number;
@@ -49,7 +49,7 @@ isPremium: true,
 
 ## 2.5 Functions in Typescript
 
-```bash
+```tsx
 const addNumber = (num1: number, num2: number): number => {
 return num1 + num2;
 };
@@ -71,7 +71,7 @@ this.balance = this.balance + money;
 
 ## 2.6 Spread, Rest, Default Parameters and Destructuring
 
-```bash
+```tsx
 // Default Parameter
 const multiplyNum = (num1: number, num2: number = 1): number => {
 return num1 / num2;
@@ -92,7 +92,7 @@ const { fullName } = user; // Destructuring
 
 ## 2.7 Type alias and optional types
 
-```bash
+```tsx
 type myString = string;
 const firtName: myString = "Riyad";
 
@@ -115,7 +115,7 @@ return num1 / num2;
 
 ## 2.8 Union, Intersection and Enum Types
 
-```bash
+```tsx
 let dynamicVar: string | number | boolean = "hello"; // Union
 dynamicVar = 25;
 
@@ -145,7 +145,7 @@ level: Level.junior,
 
 ## 2.9 Null, Unknown and Never Types
 
-```bash
+```tsx
 // Null
 const getFullName = (firstName: string, lastName: string | null): string => {
 return firstName + lastName;
@@ -179,7 +179,7 @@ throwError("Nooooo, another error");
 
 ## 2.10 Ternary Operator , Nullish Coeslancing Operator
 
-```bash
+```tsx
 let age: number | null = 19;
 const isAdult = age >= 18 ? "Yes" : "no"; // Ternary Operator
 

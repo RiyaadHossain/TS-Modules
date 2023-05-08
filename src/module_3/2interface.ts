@@ -50,5 +50,5 @@ interface INumberArray {
 const array1: INumberArray = [1, 2, 3];
 
 // Preferable to use type alias
-type NumberArray = number[]
-const array2: NumberArray = [1, 2, 3]; 
+type NumberArray = number[];
+const array2: NumberArray = [1, 2, 3];
